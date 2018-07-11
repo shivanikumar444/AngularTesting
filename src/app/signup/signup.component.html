@@ -1,0 +1,34 @@
+<div class="container signUpPage">
+  <div class="title">
+    <label class="col-md-10"> Sign Up </label>
+  </div>
+<div class="row justify-content-md-center rowContent">
+  <form [formGroup]="signup" (ngSubmit)="onSignUp()" novalidate>
+    <div class="form-group">
+      <div class="row">
+        <label class="col-md-5">Email :</label>
+        <input type="text" class="form-control" name="email" placeholder="email" formControlName="email"/>
+      </div>
+      <div *ngIf="signup.controls['email'].invalid && (signup.controls['email'].dirty || signup.controls['email'].touched)" class="alert-danger">
+        <div *ngIf="signup.controls['email'].errors.required">
+          Email is required.
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="row">
+        <label class="col-md-5">Password :</label>
+        <input type="password" class="form-control" name="password" placeholder="password" formControlName="password"/>
+      </div>
+      <div *ngIf="signup.controls['password'].invalid && (signup.controls['password'].dirty || signup.controls['password'].touched)" class="alert-danger">
+        <div *ngIf="signup.controls['password'].errors.required">
+          Password is required.
+        </div>
+      </div>
+    </div>
+    <div class="form-group signup">
+      <button type="submit" class="btn btn-primary signup" [disabled]="!signup.valid">Sign Up</button>
+    </div>
+  </form>
+</div>
+</div>

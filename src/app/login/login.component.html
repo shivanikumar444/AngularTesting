@@ -1,0 +1,40 @@
+<div class="container loginPage">
+  <div class="title">
+    <label class="col-md-10"> Login </label>
+  </div>
+  <div class="row justify-content-md-center rowContent">
+    <form [formGroup]="login" (ngSubmit)="submit()" novalidate>
+      <div class="form-group">
+        <div class="row">
+          <label class="col-md-5">Email :</label>
+          <input type="text" class="form-control" name="email" placeholder="email" formControlName="email"/>  
+        </div>
+        <div *ngIf="login.controls['email'].invalid && (login.controls['email'].dirty || login.controls['email'].touched)" class="alert-danger">
+          <div *ngIf="login.controls['email'].errors.required">
+            Email is required.
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="row">
+          <label class="col-md-5">Password :</label>
+          <input type="password" class="form-control" name="password" placeholder="password" formControlName="password"/>
+        </div>
+        <div *ngIf="login.controls['password'].invalid && (login.controls['password'].dirty || login.controls['password'].touched)" class="alert-danger">
+          <div *ngIf="login.controls['password'].errors.required">
+            Password is required.
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <label class="col-md-10">
+          <a routerLink="/signup" routerLinkActive="active">New user? Sign Up</a>
+        </label>
+      </div>
+      <div class="form-group login">
+        <button type="submit" class="btn btn-primary" [disabled]="!login.valid">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

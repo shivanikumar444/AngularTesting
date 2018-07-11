@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="title">
+    <label class="col-md-10"> Games List </label>
+  </div> 
+  <table class="table table-striped">
+    <tr>
+      <th>Game Name</th>
+      <th>Game Price</th>
+    </tr>
+    <tr *ngFor="let game of games | async">
+      <td>{{ game.name }}</td>
+      <td>{{ game.price }}</td>
+    </tr>
+  </table>
+</div>
