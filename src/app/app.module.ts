@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
@@ -32,6 +33,7 @@ import { SignupComponent } from './signup/signup.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
