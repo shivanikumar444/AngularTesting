@@ -66,7 +66,9 @@ export class UserserviceService {
         'login'
       ])
     ).catch(
-      error => console.log('In the error block')
+      error => (
+        console.log('In the error block'),
+        alert(error))
     );
     // firebase.auth().createUserWithEmailAndPassword(email, pws).catch(
     //   error => console.log('In the error block')

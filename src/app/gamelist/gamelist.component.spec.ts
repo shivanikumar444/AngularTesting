@@ -10,7 +10,12 @@ const MockFireBase: Firebase = {
   games: {
     name: 'Test Game',
     price: '1234'
-  }};
+  },
+  user: {
+    email: 'test@test.com',
+    password: 'Q!w2e3r4'
+  }
+};
 
 describe('GamelistComponent', () => {
   let component: GamelistComponent;

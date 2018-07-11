@@ -1,8 +1,15 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { Router } from '@angular/router';
+import { FormBuilder, ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { SignupComponent } from './signup.component';
 import { HomeComponent } from '../home/home.component';
+import { UserserviceService } from '../userservice.service';
+import { HttpClient } from '../../../node_modules/@angular/common/http';
+import { AngularFireDatabaseModule } from '../../../node_modules/angularfire2/database';
+import { LoginComponent } from '../login/login.component';
+import { InsertgameComponent } from '../insertgame/insertgame.component';
+import { GamelistComponent } from '../gamelist/gamelist.component';
 
 describe('SignupComponent', () => {
   let component: SignupComponent;
@@ -10,7 +17,22 @@ describe('SignupComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SignupComponent ]
+      declarations: [
+        LoginComponent,
+        HomeComponent,
+        InsertgameComponent,
+        GamelistComponent,
+        SignupComponent ],
+      providers: [
+        FormBuilder,
+        UserserviceService,
+        HttpClient
+      ],
+      imports: [
+        ReactiveFormsModule,
+        AngularFireDatabaseModule,
+        FormsModule
+      ]
     })
     .compileComponents();
   }));
